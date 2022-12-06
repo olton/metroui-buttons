@@ -6,7 +6,7 @@ import React, {
 } from "react";
 import classNames from "classnames";
 
-import "./PushButton.less"
+import "./Button.less"
 import {Icon, Caption, Image} from "../helpers";
 
 export enum BUTTON_SIZE {
@@ -25,43 +25,45 @@ export enum BUTTON_VARIANTS {
     DANGER = "danger",
 }
 
-export enum BUTTON_SQUARE {
+export enum BUTTON_ROUNDED {
     NONE = '',
-    LEFT = 'left-square',
-    RIGHT = 'right-square'
+    BOTH = 'rounded',
+    LEFT = 'left-rounded',
+    RIGHT = 'right-rounded'
+}
+
+export enum BUTTON_ANIMATION {
+    NONE = '',
+    ROTATE = 'rotate-icon',
+    FLASH = 'flash-icon',
+    HEARTBEAT = 'heartbeat-icon',
+    RING = 'ring-icon',
+
 }
 
 type IPushButton = ButtonHTMLAttributes<HTMLButtonElement> & {
     size?: BUTTON_SIZE,
     variant?: BUTTON_VARIANTS,
-    rounded?: boolean,
     icon?: string,
     image?: string,
     caption?: string,
-    rotate?: boolean,
-    flash?: boolean,
-    heartbeat?: boolean,
-    ring?: boolean,
-    square?: BUTTON_SQUARE,
+    animate?: BUTTON_ANIMATION,
+    rounded?: BUTTON_ROUNDED,
     iconRight?: boolean,
     shadow?: boolean,
     onClick?: MouseEventHandler<HTMLButtonElement>
 }
 
-const PushButton: FC<IPushButton> = ({
+const Button: FC<IPushButton> = ({
     children,
     disabled,
-    rounded,
+    rounded = BUTTON_ROUNDED.NONE,
     size = BUTTON_SIZE.DEFAULT,
     variant= BUTTON_VARIANTS.DEFAULT,
     icon,
     caption,
     image,
-    rotate,
-    flash,
-    heartbeat,
-    ring,
-    square= BUTTON_SQUARE.NONE,
+    animate = BUTTON_ANIMATION.NONE,
     iconRight = false,
     shadow = false,
     onClick,
@@ -72,12 +74,8 @@ const PushButton: FC<IPushButton> = ({
         `${size}-button`,
         `${variant}-button`,
         disabled ? `disabled`: '',
-        rounded ? `rounded`: '',
-        rotate ? `rotate-icon` : '',
-        flash ? `flash-icon` : '',
-        heartbeat ? `heartbeat-icon` : '',
-        ring ? `ring-icon` : '',
-        square === BUTTON_SQUARE.NONE ? '' : square,
+        animate === BUTTON_ANIMATION.NONE ? '' : animate,
+        rounded === BUTTON_ROUNDED.NONE ? '' : rounded,
         iconRight ? 'icon-right' : "",
         shadow ? 'shadowed' : "",
     )
@@ -103,4 +101,4 @@ const PushButton: FC<IPushButton> = ({
     )
 }
 
-export default PushButton
+export default Button
