@@ -16,6 +16,7 @@
     height: 36px;
     font-weight: 400;
     opacity: .8;
+    overflow: hidden;
 
     &:hover {
         opacity: 1;
@@ -93,6 +94,21 @@
     &:active {
         box-shadow: none;
     }
+}
+
+.image-button {
+    &.rounded {
+        border-radius: 20px;
+    }
+    &.left-rounded {
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;
+    }
+    &.right-rounded {
+        border-top-right-radius: 20px;
+        border-bottom-right-radius: 20px;
+    }
+
 }
 
 .image-button {

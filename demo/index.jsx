@@ -195,6 +195,9 @@ const App = () => {
             <div className="button-container">
                 <ImageButton animate={BUTTON_ANIMATION.RING} icon="mif-bell" caption="Ring Setup" />
                 <ImageButton animate={BUTTON_ANIMATION.ROTATE} iconRight icon="mif-cog" caption="Options" />
+                <ImageButton rounded={BUTTON_ROUNDED.BOTH} animate={BUTTON_ANIMATION.RING} icon="mif-bell" caption="Ring Setup" />
+                <ImageButton rounded={BUTTON_ROUNDED.LEFT} animate={BUTTON_ANIMATION.ROTATE} icon="mif-cog" caption="Options" />
+                <ImageButton rounded={BUTTON_ROUNDED.RIGHT} animate={BUTTON_ANIMATION.ROTATE} iconRight icon="mif-cog" caption="Options" />
             </div>
             <br/>
             <br/>
