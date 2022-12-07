@@ -8,7 +8,8 @@ import {
     BUTTON_ROUNDED,
     BUTTON_ANIMATION,
     BUTTON_EXTRA,
-    ImageButton
+    ImageButton,
+    Shortcut
 } from "../src/index"
 
 import "./index.less"
@@ -194,6 +195,41 @@ const App = () => {
             <div className="button-container">
                 <ImageButton animate={BUTTON_ANIMATION.RING} icon="mif-bell" caption="Ring Setup" />
                 <ImageButton animate={BUTTON_ANIMATION.ROTATE} iconRight icon="mif-cog" caption="Options" />
+            </div>
+            <br/>
+            <br/>
+            <div className="button-container">
+                <h2>Shortcuts</h2>
+            </div>
+            <div className="button-container">
+                <Shortcut variant={BUTTON_VARIANTS.DEFAULT} icon="mif-share" caption="Share It" />
+                <Shortcut variant={BUTTON_VARIANTS.PRIMARY} icon="mif-share" caption="Share It" />
+                <Shortcut variant={BUTTON_VARIANTS.SECONDARY} icon="mif-share" caption="Share It" />
+                <Shortcut variant={BUTTON_VARIANTS.SUCCESS} icon="mif-share" caption="Share It" />
+                <Shortcut variant={BUTTON_VARIANTS.WARNING} icon="mif-share" caption="Share It" />
+                <Shortcut variant={BUTTON_VARIANTS.DANGER} icon="mif-share" caption="Share It" />
+            </div>
+            <div className="button-container">
+                <Shortcut shadow variant={BUTTON_VARIANTS.DEFAULT} icon="mif-share" caption="Share It" />
+                <Shortcut shadow variant={BUTTON_VARIANTS.PRIMARY} icon="mif-share" caption="Share It" />
+                <Shortcut shadow variant={BUTTON_VARIANTS.SECONDARY} icon="mif-share" caption="Share It" />
+                <Shortcut shadow variant={BUTTON_VARIANTS.SUCCESS} icon="mif-share" caption="Share It" />
+                <Shortcut shadow variant={BUTTON_VARIANTS.WARNING} icon="mif-share" caption="Share It" />
+                <Shortcut shadow variant={BUTTON_VARIANTS.DANGER} icon="mif-share" caption="Share It" />
+            </div>
+            <div className="button-container">
+                <Shortcut outline variant={BUTTON_VARIANTS.DEFAULT} icon="mif-share" caption="Share It" />
+                <Shortcut outline variant={BUTTON_VARIANTS.PRIMARY} icon="mif-share" caption="Share It" />
+                <Shortcut outline variant={BUTTON_VARIANTS.SECONDARY} icon="mif-share" caption="Share It" />
+                <Shortcut outline variant={BUTTON_VARIANTS.SUCCESS} icon="mif-share" caption="Share It" />
+                <Shortcut outline variant={BUTTON_VARIANTS.WARNING} icon="mif-share" caption="Share It" />
+                <Shortcut outline variant={BUTTON_VARIANTS.DANGER} icon="mif-share" caption="Share It" />
+            </div>
+            <div className="button-container">
+                <Shortcut animate={BUTTON_ANIMATION.RING} variant={BUTTON_VARIANTS.DEFAULT} icon="mif-bell" caption="Ring" />
+                <Shortcut animate={BUTTON_ANIMATION.ROTATE} variant={BUTTON_VARIANTS.DEFAULT} icon="mif-cog" caption="options" />
+                <Shortcut rounded animate={BUTTON_ANIMATION.RING} variant={BUTTON_VARIANTS.DEFAULT} icon="mif-bell" caption="Ring" />
+                <Shortcut rounded animate={BUTTON_ANIMATION.ROTATE} variant={BUTTON_VARIANTS.DEFAULT} icon="mif-cog" caption="options" />
             </div>
         </>
     )

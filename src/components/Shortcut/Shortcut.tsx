@@ -6,47 +6,49 @@ import React, {
 } from "react";
 import classNames from "classnames";
 
-import "./CommandButton.less"
-import {BUTTON_ANIMATION, BUTTON_VARIANTS} from "../helpers";
-import {Icon, Image} from "../helpers";
+import "./Shortcut.less"
+import {Icon, Caption, Image} from "../helpers";
+import {BUTTON_ANIMATION, BUTTON_ROUNDED, BUTTON_VARIANTS} from "../helpers";
 
-type ICommandButton = ButtonHTMLAttributes<HTMLButtonElement> & {
+type IShortcut = ButtonHTMLAttributes<HTMLButtonElement> & {
     variant?: BUTTON_VARIANTS,
     icon?: string,
     image?: string,
-    title?: string,
-    subtitle?: string,
+    caption?: string,
     animate?: BUTTON_ANIMATION,
+    rounded?: BUTTON_ROUNDED,
     iconRight?: boolean,
     shadow?: boolean,
     outline?: boolean,
+    badge?: number,
     onClick?: MouseEventHandler<HTMLButtonElement>
 }
 
-const CommandButton: FC<ICommandButton> = ({
-    children,
-    disabled,
-    variant= BUTTON_VARIANTS.DEFAULT,
-    icon,
-    image,
-    title,
-    subtitle,
-    animate= BUTTON_ANIMATION.NONE,
-    iconRight = false,
-    shadow = false,
-    outline = false,
-    onClick,
-    ...props
+const Shortcut: FC<IShortcut> = ({
+   children,
+   disabled,
+   rounded = BUTTON_ROUNDED.NONE,
+   variant= BUTTON_VARIANTS.DEFAULT,
+   icon,
+   caption,
+   image,
+   animate = BUTTON_ANIMATION.NONE,
+   shadow = false,
+   outline = false,
+   badge = null,
+   onClick,
+   ...props
 }) => {
     const classes = classNames(
-        'command-button',
+        "shortcut",
         `${variant}-button`,
         disabled ? `disabled`: '',
         animate === BUTTON_ANIMATION.NONE ? '' : animate,
-        iconRight ? 'icon-right' : "",
+        rounded === BUTTON_ROUNDED.NONE ? '' : 'rounded',
         shadow ? 'shadowed' : "",
         outline ? 'outline-button' : "",
     )
+
     const handleClick: MouseEventHandler<HTMLButtonElement> = (e) => {
         if (disabled) return
         onClick && onClick(e)
@@ -54,18 +56,20 @@ const CommandButton: FC<ICommandButton> = ({
 
     return (
         <button className={classes} onClick={handleClick} {...props}>
+            {badge !== null && (
+                <span className="badge">{badge}</span>
+            )}
             {icon && (
                 <Icon name={icon}/>
             )}
             {image && (
                 <Image src={image}/>
             )}
-            <span className="caption">
-                {title}
-                {subtitle && (<small>{subtitle}</small>)}
-            </span>
+            {caption && (
+                <Caption caption={caption} />
+            )}
         </button>
     )
 }
 
-export default CommandButton
+export default Shortcut

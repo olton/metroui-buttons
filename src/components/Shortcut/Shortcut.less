@@ -1,5 +1,10 @@
-.image-button {
+.shortcut {
+    width: 84px;
+    height: 84px;
+    padding: 8px;
     display: inline-flex;
+    flex-direction: column;
+    font-size: .9rem;
     transition: all .15s ease-in-out;
     background-color: var(--defaultColor);
     color: var(--textColor);
@@ -8,14 +13,56 @@
     vertical-align: middle;
     user-select: none;
     border: 1px solid transparent;
-    outline: none;
     position: relative;
-    font-size: 14px;
-    padding: 0 .5rem 0 0;
     align-items: center;
-    height: 36px;
-    font-weight: 400;
+    justify-content: space-between;
+    outline: none;
     opacity: .8;
+    text-decoration: none;
+
+    .icon, .caption {
+        display: block;
+        line-height: 1;
+    }
+
+    .icon {
+        display: block;
+        vertical-align: middle;
+        width: 28px;
+        height: 28px;
+        font-size: 28px;
+        margin-top: 8px;
+        order: 1;
+    }
+
+    .caption {
+        color: inherit;
+        height: 20px;
+        order: 2;
+    }
+
+    .icon ~ .caption {
+        margin-top: 4px;
+    }
+
+    .badge {
+        position: absolute;
+        font-size: 11px;
+        top: .25rem;
+        right: .25rem;
+        color: inherit;
+        transform: none;
+        background-color: inherit;
+    }
+
+    &.no-caption {
+        .icon {
+            width: 32px;
+            height: 32px;
+            font-size: 32px;
+            margin-top: 24px;
+        }
+    }
 
     &:hover {
         opacity: 1;
@@ -23,62 +70,7 @@
 
     &:active {
         opacity: .9;
-    }
-
-    .icon {
-        width: 36px;
-        height: 36px;
-        line-height: 34px;
-        font-size: 1rem;
-        background-color: var(--imageButtonSecondaryColor);
-        color: var(--textInvertColor);
-        order: 1;
-        text-align: center;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    .caption {
-        margin-left: .5rem;
-        text-align: left;
-        color: inherit;
-        order: 2;
-        font-weight: 400;
-        line-height: 1.2;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        small {
-            display: block;
-            font-size: .8rem;
-        }
-    }
-
-    &.icon-right {
-        padding: 0 0 0 .5rem;
-
-        .icon {
-            order: 2;
-        }
-        .caption {
-            order: 1;
-            margin-left: 0;
-            margin-right: .5rem;
-        }
-    }
-
-    &:focus, &:hover, &.focus {
-        text-decoration: none;
-    }
-
-    &:active {
         box-shadow: none;
-        outline: 0;
-    }
-
-    &.disabled, &:disabled {
-        opacity: .65;
     }
 
     &.outline {
@@ -86,16 +78,26 @@
         border-width: 1px;
         border-color: var(--defaultColor);
     }
+
+    &.disabled, &:disabled {
+        opacity: .65;
+    }
 }
 
-.image-button.shadowed:not(.disabled) {
+.shortcut.shadowed:not(.disabled) {
     box-shadow: 0 1px 3px var(--shadowColor);
     &:active {
         box-shadow: none;
     }
 }
 
-.image-button {
+.shortcut {
+    &.rounded {
+        border-radius: 10px;
+    }
+}
+
+.shortcut {
     &.primary-button {
         background-color: var(--primaryColor);
         color: var(--textInvertColor);
@@ -118,7 +120,7 @@
     }
 }
 
-.image-button {
+.shortcut {
     &.outline-button {
         background-color: transparent!important;
         color: var(--textColor) !important;

@@ -1,5 +1,7 @@
 import "../components/common/colors.less"
 import "../components/common/animation.less"
-export {Button, BUTTON_VARIANTS, BUTTON_SIZE, BUTTON_ROUNDED, BUTTON_ANIMATION, BUTTON_EXTRA} from "./Button"
+export {BUTTON_VARIANTS, BUTTON_SIZE, BUTTON_ROUNDED, BUTTON_ANIMATION, BUTTON_EXTRA} from "./helpers"
+export {default as Button} from "./Button"
 export {default as CommandButton} from "./CommandButton"
 export {default as ImageButton} from "./ImageButton"
+export {default as Shortcut} from "./Shortcut"

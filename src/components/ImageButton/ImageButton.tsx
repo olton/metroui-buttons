@@ -8,7 +8,7 @@ import classNames from "classnames";
 
 import "./ImageButton.less"
 import {Icon, Caption, Image} from "../helpers";
-import {BUTTON_ANIMATION, BUTTON_EXTRA, BUTTON_ROUNDED, BUTTON_SIZE, BUTTON_VARIANTS} from "../Button";
+import {BUTTON_ANIMATION, BUTTON_ROUNDED, BUTTON_VARIANTS} from "../helpers";
 
 type IImageButton = ButtonHTMLAttributes<HTMLButtonElement> & {
     variant?: BUTTON_VARIANTS,
