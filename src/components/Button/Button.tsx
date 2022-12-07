@@ -41,6 +41,12 @@ export enum BUTTON_ANIMATION {
 
 }
 
+export enum BUTTON_EXTRA {
+    NONE = '',
+    SQUARE = 'square-button',
+    CIRCLE = 'circle-button',
+}
+
 type IPushButton = ButtonHTMLAttributes<HTMLButtonElement> & {
     size?: BUTTON_SIZE,
     variant?: BUTTON_VARIANTS,
@@ -51,6 +57,9 @@ type IPushButton = ButtonHTMLAttributes<HTMLButtonElement> & {
     rounded?: BUTTON_ROUNDED,
     iconRight?: boolean,
     shadow?: boolean,
+    outline?: boolean,
+    extra?: BUTTON_EXTRA,
+    flat: boolean,
     onClick?: MouseEventHandler<HTMLButtonElement>
 }
 
@@ -66,6 +75,9 @@ const Button: FC<IPushButton> = ({
     animate = BUTTON_ANIMATION.NONE,
     iconRight = false,
     shadow = false,
+    outline = false,
+    extra = BUTTON_EXTRA.NONE,
+    flat = false,
     onClick,
     ...props
 }) => {
@@ -78,6 +90,9 @@ const Button: FC<IPushButton> = ({
         rounded === BUTTON_ROUNDED.NONE ? '' : rounded,
         iconRight ? 'icon-right' : "",
         shadow ? 'shadowed' : "",
+        outline ? 'outline-button' : "",
+        extra === BUTTON_EXTRA.NONE ? '' : extra,
+        flat ? 'flat-button' : ''
     )
 
     const handleClick: MouseEventHandler<HTMLButtonElement> = (e) => {
@@ -96,7 +111,9 @@ const Button: FC<IPushButton> = ({
             {caption && (
                 <Caption caption={caption} />
             )}
-            <span className="caption">{children}</span>
+            {children && (
+                <span className="caption">{children}</span>
+            )}
         </button>
     )
 }

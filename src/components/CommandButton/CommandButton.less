@@ -1,0 +1,148 @@
+.command-button {
+    padding: .5rem .75rem;
+    display: inline-flex;
+    font-size: 1.5rem;
+    transition: all .15s ease-in-out;
+    background-color: var(--defaultColor);
+    color: var(--textColor);
+    cursor: pointer;
+    white-space: nowrap;
+    vertical-align: middle;
+    user-select: none;
+    border: 1px solid transparent;
+    outline: none;
+    position: relative;
+    font-weight: 500;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    text-decoration: none;
+
+    .icon {
+        width: 42px;
+        height: 42px;
+        line-height: 1.2;
+        font-size: 32px;
+        color: inherit;
+        order: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .caption {
+        margin-left: 8px;
+        text-align: left;
+        color: inherit;
+        order: 2;
+        font-weight: 400;
+        line-height: 1.2;
+
+        small {
+            display: block;
+            font-size: 12px;
+        }
+    }
+
+    &.icon-right {
+        .icon {
+            order: 2;
+        }
+
+        .caption {
+            order: 1;
+            margin-left: 0;
+            margin-right: .5rem;
+            text-align: right;
+        }
+    }
+
+    &.outline {
+        background: transparent none;
+        border-width: 1px;
+        border-color: var(--defaultColor);
+    }
+
+    &:hover {
+        opacity: .8;
+    }
+
+    &:active {
+        opacity: .9;
+        box-shadow: none;
+        outline: 0;
+    }
+
+    &.disabled, &:disabled {
+        opacity: .65;
+    }
+}
+
+.command-button.shadowed:not(.disabled) {
+    box-shadow: 0 1px 3px var(--shadowColor);
+    &:active {
+        box-shadow: none;
+    }
+}
+
+.command-button {
+    &.primary-button {
+        background-color: var(--primaryColor);
+        color: var(--textInvertColor);
+    }
+    &.secondary-button {
+        background-color: var(--secondaryColor);
+        color: var(--textInvertColor);
+    }
+    &.danger-button {
+        background-color: var(--dangerColor);
+        color: var(--textInvertColor);
+    }
+    &.warning-button {
+        background-color: var(--warningColor);
+        color: var(--textInvertColor);
+    }
+    &.success-button {
+        background-color: var(--successColor);
+        color: var(--textInvertColor);
+    }
+}
+
+.command-button {
+    &.outline-button {
+        background-color: transparent!important;
+        color: var(--textColor) !important;
+        height: auto;
+
+        &.default-button:hover {background-color: var(--defaultColor) !important; color: var(--textInvertColor) !important;}
+        &.default-button {
+            border-color: var(--defaultColor) !important;
+            color: var(--textColor) !important;
+        }
+        &.primary-button:hover {background-color: var(--primaryColor) !important; color: var(--textInvertColor) !important;}
+        &.primary-button {
+            border-color: var(--primaryColor) !important;
+            color: var(--primaryColor) !important;
+        }
+        &.secondary-button:hover {background-color: var(--secondaryColor) !important; color: var(--textInvertColor) !important;}
+        &.secondary-button {
+            border-color: var(--secondaryColor) !important;
+            color: var(--secondaryColor) !important;
+        }
+        &.danger-button:hover {background-color: var(--dangerColor) !important; color: var(--textInvertColor) !important;}
+        &.danger-button {
+            border-color: var(--dangerColor) !important;
+            color: var(--dangerColor) !important;
+        }
+        &.warning-button:hover {background-color: var(--warningColor) !important; color: var(--textInvertColor) !important;}
+        &.warning-button {
+            border-color: var(--warningColor) !important;
+            color: var(--warningColor) !important;
+        }
+        &.success-button:hover {background-color: var(--successColor) !important; color: var(--textInvertColor) !important;}
+        &.success-button {
+            border-color: var(--successColor) !important;
+            color: var(--successColor) !important;
+        }
+    }
+}

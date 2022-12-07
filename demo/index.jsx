@@ -1,6 +1,6 @@
 import React from "react";
 import { createRoot } from 'react-dom/client';
-import {PushButton, BUTTON_SIZE, BUTTON_VARIANTS, BUTTON_ROUNDED, BUTTON_ANIMATION} from "../src/index"
+import {Button, CommandButton, BUTTON_SIZE, BUTTON_VARIANTS, BUTTON_ROUNDED, BUTTON_ANIMATION, BUTTON_EXTRA} from "../src/index"
 import "./index.less"
 
 const App = () => {
@@ -16,84 +16,136 @@ const App = () => {
                 <h2>Push Button</h2>
             </div>
             <div className="button-container">
-                <PushButton variant={BUTTON_VARIANTS.DEFAULT}>Default</PushButton>
-                <PushButton variant={BUTTON_VARIANTS.PRIMARY}>Primary</PushButton>
-                <PushButton variant={BUTTON_VARIANTS.SECONDARY}>Secondary</PushButton>
-                <PushButton variant={BUTTON_VARIANTS.DANGER}>Danger</PushButton>
-                <PushButton variant={BUTTON_VARIANTS.WARNING}>Warning</PushButton>
-                <PushButton variant={BUTTON_VARIANTS.SUCCESS}>Success</PushButton>
-                <PushButton variant={BUTTON_VARIANTS.DEFAULT} disabled={true}>Disabled</PushButton>
+                <Button variant={BUTTON_VARIANTS.DEFAULT}>Default</Button>
+                <Button variant={BUTTON_VARIANTS.PRIMARY}>Primary</Button>
+                <Button variant={BUTTON_VARIANTS.SECONDARY}>Secondary</Button>
+                <Button variant={BUTTON_VARIANTS.DANGER}>Danger</Button>
+                <Button variant={BUTTON_VARIANTS.WARNING}>Warning</Button>
+                <Button variant={BUTTON_VARIANTS.SUCCESS}>Success</Button>
+                <Button variant={BUTTON_VARIANTS.DEFAULT} disabled={true}>Disabled</Button>
             </div>
             <div className="button-container">
-                <PushButton icon="mif-rocket" caption="Rocket" variant={BUTTON_VARIANTS.DEFAULT}/>
-                <PushButton image="like.svg" variant={BUTTON_VARIANTS.PRIMARY}>Primary</PushButton>
-                <PushButton icon="mif-rocket" variant={BUTTON_VARIANTS.SECONDARY}>Secondary</PushButton>
-                <PushButton icon="mif-rocket" variant={BUTTON_VARIANTS.DANGER}>Danger</PushButton>
-                <PushButton icon="mif-rocket" variant={BUTTON_VARIANTS.WARNING}>Warning</PushButton>
-                <PushButton icon="mif-rocket" variant={BUTTON_VARIANTS.SUCCESS}>Success</PushButton>
-                <PushButton icon="mif-rocket" variant={BUTTON_VARIANTS.DEFAULT} disabled={true}>Disabled</PushButton>
+                <Button icon="mif-rocket" caption="Rocket" variant={BUTTON_VARIANTS.DEFAULT}/>
+                <Button image="like.svg" variant={BUTTON_VARIANTS.PRIMARY}>Primary</Button>
+                <Button icon="mif-rocket" variant={BUTTON_VARIANTS.SECONDARY}>Secondary</Button>
+                <Button icon="mif-rocket" variant={BUTTON_VARIANTS.DANGER}>Danger</Button>
+                <Button icon="mif-rocket" variant={BUTTON_VARIANTS.WARNING}>Warning</Button>
+                <Button icon="mif-rocket" variant={BUTTON_VARIANTS.SUCCESS}>Success</Button>
+                <Button icon="mif-rocket" variant={BUTTON_VARIANTS.DEFAULT} disabled={true}>Disabled</Button>
             </div>
             <div className="button-container">
-                <PushButton shadow icon="mif-rocket" caption="Rocket" variant={BUTTON_VARIANTS.DEFAULT}/>
-                <PushButton shadow image="like.svg" variant={BUTTON_VARIANTS.PRIMARY}>Primary</PushButton>
-                <PushButton shadow icon="mif-rocket" variant={BUTTON_VARIANTS.SECONDARY}>Secondary</PushButton>
-                <PushButton shadow icon="mif-rocket" variant={BUTTON_VARIANTS.DANGER}>Danger</PushButton>
-                <PushButton shadow icon="mif-rocket" variant={BUTTON_VARIANTS.WARNING}>Warning</PushButton>
-                <PushButton shadow icon="mif-rocket" variant={BUTTON_VARIANTS.SUCCESS}>Success</PushButton>
-                <PushButton shadow icon="mif-rocket" variant={BUTTON_VARIANTS.DEFAULT} disabled={true}>Disabled</PushButton>
+                <Button shadow icon="mif-rocket" caption="Rocket" variant={BUTTON_VARIANTS.DEFAULT}/>
+                <Button shadow image="like.svg" variant={BUTTON_VARIANTS.PRIMARY}>Primary</Button>
+                <Button shadow icon="mif-rocket" variant={BUTTON_VARIANTS.SECONDARY}>Secondary</Button>
+                <Button shadow icon="mif-rocket" variant={BUTTON_VARIANTS.DANGER}>Danger</Button>
+                <Button shadow icon="mif-rocket" variant={BUTTON_VARIANTS.WARNING}>Warning</Button>
+                <Button shadow icon="mif-rocket" variant={BUTTON_VARIANTS.SUCCESS}>Success</Button>
+                <Button shadow icon="mif-rocket" variant={BUTTON_VARIANTS.DEFAULT} disabled={true}>Disabled</Button>
             </div>
             <div className="button-container">
-                <PushButton size={BUTTON_SIZE.MINI}>Mini</PushButton>
-                <PushButton size={BUTTON_SIZE.SMALL}>Small</PushButton>
-                <PushButton size={BUTTON_SIZE.DEFAULT}>Default</PushButton>
-                <PushButton size={BUTTON_SIZE.LARGE}>Large</PushButton>
+                <Button flat icon="mif-rocket" caption="Rocket" variant={BUTTON_VARIANTS.DEFAULT}/>
+                <Button flat icon="mif-rocket" variant={BUTTON_VARIANTS.PRIMARY}>Primary</Button>
+                <Button flat icon="mif-rocket" variant={BUTTON_VARIANTS.SECONDARY}>Secondary</Button>
+                <Button flat icon="mif-rocket" variant={BUTTON_VARIANTS.DANGER}>Danger</Button>
+                <Button flat icon="mif-rocket" variant={BUTTON_VARIANTS.WARNING}>Warning</Button>
+                <Button flat icon="mif-rocket" variant={BUTTON_VARIANTS.SUCCESS}>Success</Button>
+                <Button flat icon="mif-rocket" variant={BUTTON_VARIANTS.DEFAULT} disabled>Disabled</Button>
+            </div>
+            <div className="button-container">
+                <Button size={BUTTON_SIZE.MINI}>Mini</Button>
+                <Button size={BUTTON_SIZE.SMALL}>Small</Button>
+                <Button size={BUTTON_SIZE.DEFAULT}>Default</Button>
+                <Button size={BUTTON_SIZE.LARGE}>Large</Button>
 
-                <PushButton icon="mif-rocket" size={BUTTON_SIZE.MINI}>Mini</PushButton>
-                <PushButton icon="mif-rocket" size={BUTTON_SIZE.SMALL}>Small</PushButton>
-                <PushButton icon="mif-rocket" size={BUTTON_SIZE.DEFAULT}>Default</PushButton>
-                <PushButton icon="mif-rocket" size={BUTTON_SIZE.LARGE}>Large</PushButton>
+                <Button icon="mif-rocket" size={BUTTON_SIZE.MINI}>Mini</Button>
+                <Button icon="mif-rocket" size={BUTTON_SIZE.SMALL}>Small</Button>
+                <Button icon="mif-rocket" size={BUTTON_SIZE.DEFAULT}>Default</Button>
+                <Button icon="mif-rocket" size={BUTTON_SIZE.LARGE}>Large</Button>
             </div>
             <div className="button-container">
-                <PushButton rounded={BUTTON_ROUNDED.BOTH} size={BUTTON_SIZE.MINI}>Mini</PushButton>
-                <PushButton rounded={BUTTON_ROUNDED.BOTH} size={BUTTON_SIZE.SMALL}>Small</PushButton>
-                <PushButton rounded={BUTTON_ROUNDED.BOTH} size={BUTTON_SIZE.DEFAULT}>Default</PushButton>
-                <PushButton rounded={BUTTON_ROUNDED.BOTH} size={BUTTON_SIZE.LARGE}>Large</PushButton>
-                <PushButton icon="mif-cog" rounded={BUTTON_ROUNDED.BOTH} size={BUTTON_SIZE.MINI}>Mini</PushButton>
-                <PushButton icon="mif-cog" rounded={BUTTON_ROUNDED.BOTH} size={BUTTON_SIZE.SMALL}>Small</PushButton>
-                <PushButton icon="mif-cog" rounded={BUTTON_ROUNDED.BOTH} size={BUTTON_SIZE.DEFAULT}>Default</PushButton>
-                <PushButton icon="mif-cog" rounded={BUTTON_ROUNDED.BOTH} size={BUTTON_SIZE.LARGE}>Large</PushButton>
+                <Button rounded={BUTTON_ROUNDED.BOTH} size={BUTTON_SIZE.MINI}>Mini</Button>
+                <Button rounded={BUTTON_ROUNDED.BOTH} size={BUTTON_SIZE.SMALL}>Small</Button>
+                <Button rounded={BUTTON_ROUNDED.BOTH} size={BUTTON_SIZE.DEFAULT}>Default</Button>
+                <Button rounded={BUTTON_ROUNDED.BOTH} size={BUTTON_SIZE.LARGE}>Large</Button>
+                <Button icon="mif-cog" rounded={BUTTON_ROUNDED.BOTH} size={BUTTON_SIZE.MINI}>Mini</Button>
+                <Button icon="mif-cog" rounded={BUTTON_ROUNDED.BOTH} size={BUTTON_SIZE.SMALL}>Small</Button>
+                <Button icon="mif-cog" rounded={BUTTON_ROUNDED.BOTH} size={BUTTON_SIZE.DEFAULT}>Default</Button>
+                <Button icon="mif-cog" rounded={BUTTON_ROUNDED.BOTH} size={BUTTON_SIZE.LARGE}>Large</Button>
             </div>
             <div className="button-container">
-                <PushButton icon="mif-cog" animate={BUTTON_ANIMATION.ROTATE} rounded={BUTTON_ROUNDED.BOTH} size={BUTTON_SIZE.DEFAULT}>Rotate</PushButton>
-                <PushButton icon="mif-cog" animate={BUTTON_ANIMATION.FLASH} rounded={BUTTON_ROUNDED.BOTH} size={BUTTON_SIZE.DEFAULT}>Flash</PushButton>
-                <PushButton icon="mif-cog" animate={BUTTON_ANIMATION.HEARTBEAT} rounded={BUTTON_ROUNDED.BOTH} size={BUTTON_SIZE.DEFAULT}>Heartbeat</PushButton>
-                <PushButton icon="mif-bell" animate={BUTTON_ANIMATION.RING} rounded={BUTTON_ROUNDED.BOTH} size={BUTTON_SIZE.DEFAULT}>Ring</PushButton>
+                <Button icon="mif-cog" animate={BUTTON_ANIMATION.ROTATE} rounded={BUTTON_ROUNDED.BOTH} size={BUTTON_SIZE.DEFAULT}>Rotate</Button>
+                <Button icon="mif-cog" animate={BUTTON_ANIMATION.FLASH} rounded={BUTTON_ROUNDED.BOTH} size={BUTTON_SIZE.DEFAULT}>Flash</Button>
+                <Button icon="mif-cog" animate={BUTTON_ANIMATION.HEARTBEAT} rounded={BUTTON_ROUNDED.BOTH} size={BUTTON_SIZE.DEFAULT}>Heartbeat</Button>
+                <Button icon="mif-bell" animate={BUTTON_ANIMATION.RING} rounded={BUTTON_ROUNDED.BOTH} size={BUTTON_SIZE.DEFAULT}>Ring</Button>
             </div>
             <div className="button-container">
-                <PushButton iconRight icon="mif-cog" animate={BUTTON_ANIMATION.ROTATE} rounded={BUTTON_ROUNDED.BOTH} size={BUTTON_SIZE.DEFAULT}>Rotate</PushButton>
-                <PushButton iconRight icon="mif-cog" animate={BUTTON_ANIMATION.FLASH} rounded={BUTTON_ROUNDED.BOTH} size={BUTTON_SIZE.DEFAULT}>Flash</PushButton>
-                <PushButton iconRight icon="mif-cog" animate={BUTTON_ANIMATION.HEARTBEAT} rounded={BUTTON_ROUNDED.BOTH} size={BUTTON_SIZE.DEFAULT}>Heartbeat</PushButton>
-                <PushButton iconRight icon="mif-bell" animate={BUTTON_ANIMATION.RING} rounded={BUTTON_ROUNDED.BOTH} size={BUTTON_SIZE.DEFAULT}>Ring</PushButton>
+                <Button iconRight icon="mif-cog" animate={BUTTON_ANIMATION.ROTATE} rounded={BUTTON_ROUNDED.BOTH} size={BUTTON_SIZE.DEFAULT}>Rotate</Button>
+                <Button iconRight icon="mif-cog" animate={BUTTON_ANIMATION.FLASH} rounded={BUTTON_ROUNDED.BOTH} size={BUTTON_SIZE.DEFAULT}>Flash</Button>
+                <Button iconRight icon="mif-cog" animate={BUTTON_ANIMATION.HEARTBEAT} rounded={BUTTON_ROUNDED.BOTH} size={BUTTON_SIZE.DEFAULT}>Heartbeat</Button>
+                <Button iconRight icon="mif-bell" animate={BUTTON_ANIMATION.RING} rounded={BUTTON_ROUNDED.BOTH} size={BUTTON_SIZE.DEFAULT}>Ring</Button>
             </div>
             <div className="button-container">
-                <PushButton icon="mif-cog" rounded={BUTTON_ROUNDED.LEFT} size={BUTTON_SIZE.MINI}>Rounded Left</PushButton>
-                <PushButton rounded={BUTTON_ROUNDED.NONE} size={BUTTON_SIZE.MINI}>Rounded None</PushButton>
-                <PushButton icon="mif-cog" rounded={BUTTON_ROUNDED.RIGHT} size={BUTTON_SIZE.MINI}>Rounded Right</PushButton>
+                <Button icon="mif-cog" rounded={BUTTON_ROUNDED.LEFT} size={BUTTON_SIZE.MINI}>Rounded Left</Button>
+                <Button rounded={BUTTON_ROUNDED.NONE} size={BUTTON_SIZE.MINI}>Rounded None</Button>
+                <Button icon="mif-cog" rounded={BUTTON_ROUNDED.RIGHT} size={BUTTON_SIZE.MINI}>Rounded Right</Button>
             </div>
             <div className="button-container">
-                <PushButton icon="mif-cog" rounded={BUTTON_ROUNDED.LEFT} size={BUTTON_SIZE.SMALL}>Rounded Left</PushButton>
-                <PushButton rounded={BUTTON_ROUNDED.NONE} size={BUTTON_SIZE.SMALL}>Rounded None</PushButton>
-                <PushButton icon="mif-cog" rounded={BUTTON_ROUNDED.RIGHT} size={BUTTON_SIZE.SMALL}>Rounded Right</PushButton>
+                <Button icon="mif-cog" rounded={BUTTON_ROUNDED.LEFT} size={BUTTON_SIZE.SMALL}>Rounded Left</Button>
+                <Button rounded={BUTTON_ROUNDED.NONE} size={BUTTON_SIZE.SMALL}>Rounded None</Button>
+                <Button icon="mif-cog" rounded={BUTTON_ROUNDED.RIGHT} size={BUTTON_SIZE.SMALL}>Rounded Right</Button>
             </div>
             <div className="button-container">
-                <PushButton icon="mif-cog" rounded={BUTTON_ROUNDED.LEFT} size={BUTTON_SIZE.DEFAULT}>Rounded Left</PushButton>
-                <PushButton rounded={BUTTON_ROUNDED.NONE} size={BUTTON_SIZE.DEFAULT}>Rounded None</PushButton>
-                <PushButton icon="mif-cog" rounded={BUTTON_ROUNDED.RIGHT} size={BUTTON_SIZE.DEFAULT}>Rounded Right</PushButton>
+                <Button icon="mif-cog" rounded={BUTTON_ROUNDED.LEFT} size={BUTTON_SIZE.DEFAULT}>Rounded Left</Button>
+                <Button rounded={BUTTON_ROUNDED.NONE} size={BUTTON_SIZE.DEFAULT}>Rounded None</Button>
+                <Button icon="mif-cog" rounded={BUTTON_ROUNDED.RIGHT} size={BUTTON_SIZE.DEFAULT}>Rounded Right</Button>
             </div>
             <div className="button-container">
-                <PushButton icon="mif-cog" rounded={BUTTON_ROUNDED.LEFT} size={BUTTON_SIZE.LARGE}>Rounded Left</PushButton>
-                <PushButton rounded={BUTTON_ROUNDED.NONE} size={BUTTON_SIZE.LARGE}>Rounded None</PushButton>
-                <PushButton icon="mif-cog" rounded={BUTTON_ROUNDED.RIGHT} size={BUTTON_SIZE.LARGE}>Rounded Right</PushButton>
+                <Button icon="mif-cog" rounded={BUTTON_ROUNDED.LEFT} size={BUTTON_SIZE.LARGE}>Rounded Left</Button>
+                <Button rounded={BUTTON_ROUNDED.NONE} size={BUTTON_SIZE.LARGE}>Rounded None</Button>
+                <Button icon="mif-cog" rounded={BUTTON_ROUNDED.RIGHT} size={BUTTON_SIZE.LARGE}>Rounded Right</Button>
+            </div>
+            <div className="button-container">
+                <Button outline variant={BUTTON_VARIANTS.DEFAULT}>Default</Button>
+                <Button outline variant={BUTTON_VARIANTS.PRIMARY}>Primary</Button>
+                <Button outline variant={BUTTON_VARIANTS.SECONDARY}>Secondary</Button>
+                <Button outline variant={BUTTON_VARIANTS.DANGER}>Danger</Button>
+                <Button outline variant={BUTTON_VARIANTS.WARNING}>Warning</Button>
+                <Button outline variant={BUTTON_VARIANTS.SUCCESS}>Success</Button>
+                <Button outline variant={BUTTON_VARIANTS.DEFAULT} disabled={true}>Disabled</Button>
+            </div>
+            <div className="button-container">
+                <Button extra={BUTTON_EXTRA.SQUARE} icon="mif-rocket" size={BUTTON_SIZE.MINI}/>
+                <Button extra={BUTTON_EXTRA.SQUARE} icon="mif-rocket" size={BUTTON_SIZE.SMALL}/>
+                <Button extra={BUTTON_EXTRA.SQUARE} icon="mif-rocket" size={BUTTON_SIZE.DEFAULT}/>
+                <Button extra={BUTTON_EXTRA.SQUARE} icon="mif-rocket" size={BUTTON_SIZE.LARGE}/>
+
+                <Button extra={BUTTON_EXTRA.CIRCLE} icon="mif-rocket" size={BUTTON_SIZE.MINI}/>
+                <Button extra={BUTTON_EXTRA.CIRCLE} icon="mif-rocket" size={BUTTON_SIZE.SMALL}/>
+                <Button extra={BUTTON_EXTRA.CIRCLE} icon="mif-rocket" size={BUTTON_SIZE.DEFAULT}/>
+                <Button extra={BUTTON_EXTRA.CIRCLE} icon="mif-rocket" size={BUTTON_SIZE.LARGE}/>
+            </div>
+            <br/>
+            <br/>
+            <div className="button-container">
+                <h2>Command Button</h2>
+            </div>
+            <div className="button-container">
+                <CommandButton icon="mif-share" title="Yes, share and connect" subtitle="Use this option for home or work"/>
+                <CommandButton iconRight icon="mif-share" title="Yes, share and connect" subtitle="Use this option for home or work"/>
+            </div>
+            <div className="button-container">
+                <CommandButton variant={BUTTON_VARIANTS.PRIMARY} icon="mif-share" title="Yes, share and connect" subtitle="Use this option for home or work"/>
+                <CommandButton variant={BUTTON_VARIANTS.SECONDARY} icon="mif-share" title="Yes, share and connect" subtitle="Use this option for home or work"/>
+                <CommandButton variant={BUTTON_VARIANTS.DANGER} icon="mif-share" title="Yes, share and connect" subtitle="Use this option for home or work"/>
+            </div>
+            <div className="button-container">
+                <CommandButton animate={BUTTON_ANIMATION.RING} variant={BUTTON_VARIANTS.WARNING} icon="mif-bell" title="Yes, share and connect" subtitle="Use this option for home or work"/>
+                <CommandButton animate={BUTTON_ANIMATION.ROTATE} variant={BUTTON_VARIANTS.SUCCESS} icon="mif-cog" title="Yes, share and connect" subtitle="Use this option for home or work"/>
+            </div>
+            <div className="button-container">
+                <CommandButton outline variant={BUTTON_VARIANTS.PRIMARY} icon="mif-share" title="Yes, share and connect" subtitle="Use this option for home or work"/>
+                <CommandButton outline variant={BUTTON_VARIANTS.SECONDARY} icon="mif-share" title="Yes, share and connect" subtitle="Use this option for home or work"/>
+                <CommandButton outline variant={BUTTON_VARIANTS.DANGER} icon="mif-share" title="Yes, share and connect" subtitle="Use this option for home or work"/>
             </div>
         </>
     )

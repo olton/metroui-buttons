@@ -1,19 +1,4 @@
-@import (once) "../../common/reset";
-
-:root {
-    --textColor: #000;
-    --textInvertColor: #fff;
-    --defaultColor: #cecece;
-    --dangerColor: #de0a0a;
-    --warningColor: #ffaa35;
-    --successColor: #61bd17;
-    --primaryColor: #3c8aff;
-    --secondaryColor: rgba(51, 178, 255, 1);
-    --disableColor: #ececec;
-    --shadowColor: rgba(0, 0, 0, 0.4);
-}
-
-.push-button {
+.push-button, .outline-button {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -34,6 +19,7 @@
     position: relative;
     overflow: visible;
     opacity: 1;
+    box-sizing: border-box;
 
     &:hover {
         opacity: .8;
@@ -77,7 +63,7 @@
     }
 }
 
-.push-button {
+.push-button, .outline-button {
     &.mini-button {
         font-size: 10px;
         padding: 0 4px;
@@ -98,7 +84,7 @@
     }
 }
 
-.push-button.rounded {
+.push-button.rounded, .outline-button.rounded {
     &.mini-button {
         border-radius: 10px;
     }
@@ -121,7 +107,7 @@
     }
 }
 
-.push-button {
+.push-button, .outline-button {
     .icon {
         display: flex;
         align-items: center;
@@ -154,7 +140,7 @@
     }
 }
 
-.push-button {
+.push-button, .outline-button {
     &.left-rounded .icon {
         order: 0;
     }
@@ -217,108 +203,99 @@
     }
 }
 
-.push-button {
-    &.rotate-icon .icon > * {
-        transform-origin: center;
-    }
+.outline-button {
+    background-color: transparent!important;
+}
 
-    &.rotate-icon .icon > * {
-        animation: --kf-rotate 3s linear infinite;
+.outline-button {
+    &.default-button {
+        border-color: var(--defaultColor);
+        color: var(--textColor);
     }
-
-    &.flash-icon .icon > * {
-        animation: --kf-flash 1s linear infinite;
+    &.primary-button {
+        border-color: var(--primaryColor);
+        color: var(--primaryColor);
     }
-
-    &.heartbeat-icon .icon > * {
-        animation: --kf-heartbeat 1s linear infinite;
+    &.secondary-button {
+        border-color: var(--secondaryColor);
+        color: var(--secondaryColor);
     }
-
-    &.ring-icon .icon{
-        transform-origin: 50% 0;
+    &.success-button {
+        border-color: var(--successColor);
+        color: var(--successColor);
     }
-    &.ring-icon .icon > * {
-        animation: --kf-ring 2s ease infinite;
+    &.warning-button {
+        border-color: var(--warningColor);
+        color: var(--warningColor);
+    }
+    &.danger-button {
+        border-color: var(--dangerColor);
+        color: var(--dangerColor);
     }
 }
 
-@keyframes --kf-rotate {
-    100% {
-        transform: rotate(360deg);
+.square-button, .circle-button {
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    padding: 0!important;
+
+    &.mini-button {
+        width: 20px;
+        height: 20px;
+    }
+    &.small-button {
+        width: 26px;
+        height: 26px;
+    }
+    &.medium-button {
+        width: 36px;
+        height: 36px;
+    }
+    &.large-button {
+        width: 54px;
+        height: 54px;
     }
 }
 
-@keyframes --kf-flash {
-    0% {
-        opacity: .6;
-    }
-
-    50% {
-        transform: scale(1.8);
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 0;
-    }
+.circle-button {
+    border-radius: 50%;
 }
 
-@keyframes --kf-heartbeat {
-    0% {
-        transform: scale(1.1);
+.flat-button {
+    background-color: transparent!important;
+    color: var(--textColor) !important;
+
+    &:hover {
+        background-color: var(--defaultColor) !important;
+    }
+    &.primary-button {color: var(--primaryColor) !important;}
+    &.primary-button:hover {
+        background-color: var(--primaryColor) !important;
+        color: var(--textInvertColor) !important;
+    }
+    &.secondary-button {color: var(--secondaryColor) !important;}
+    &.secondary-button:hover {
+        background-color: var(--secondaryColor) !important;
+        color: var(--textInvertColor) !important;
+    }
+    &.success-button {color: var(--successColor) !important;}
+    &.success-button:hover {
+        background-color: var(--successColor) !important;
+        color: var(--textInvertColor) !important;
+    }
+    &.warning-button {color: var(--warningColor) !important;}
+    &.warning-button:hover {
+        background-color: var(--warningColor) !important;
+        color: var(--textInvertColor) !important;
+    }
+    &.danger-button {color: var(--dangerColor) !important;}
+    &.danger-button:hover {
+        background-color: var(--dangerColor) !important;
+        color: var(--textInvertColor) !important;
     }
 
-    50% {
-        transform: scale(0.8);
-    }
-
-    100% {
-        transform: scale(1.1);
-    }
-}
-
-@keyframes --kf-ring {
-    0% {
-        transform: rotate(-15deg);
-    }
-
-    2% {
-        transform: rotate(15deg);
-    }
-
-    4% {
-        transform: rotate(-18deg);
-    }
-
-    6% {
-        transform: rotate(18deg);
-    }
-
-    8% {
-        transform: rotate(-22deg);
-    }
-
-    10% {
-        transform: rotate(22deg);
-    }
-
-    12% {
-        transform: rotate(-18deg);
-    }
-
-    14% {
-        transform: rotate(18deg);
-    }
-
-    16% {
-        transform: rotate(-12deg);
-    }
-
-    18% {
-        transform: rotate(12deg);
-    }
-
-    20% {
-        transform: rotate(0deg);
+    &.disabled {
+        color: #ececec!important;
     }
 }

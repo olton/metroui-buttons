@@ -1,0 +1,105 @@
+.push-button, .command-button {
+    &.rotate-icon .icon > * {
+        transform-origin: center;
+    }
+
+    &.rotate-icon .icon > * {
+        animation: --kf-rotate 3s linear infinite;
+    }
+
+    &.flash-icon .icon > * {
+        animation: --kf-flash 1s linear infinite;
+    }
+
+    &.heartbeat-icon .icon > * {
+        animation: --kf-heartbeat 1s linear infinite;
+    }
+
+    &.ring-icon .icon{
+        transform-origin: 50% 0;
+    }
+    &.ring-icon .icon > * {
+        animation: --kf-ring 2s ease infinite;
+    }
+}
+
+@keyframes --kf-rotate {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes --kf-flash {
+    0% {
+        opacity: .6;
+    }
+
+    50% {
+        transform: scale(1.8);
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes --kf-heartbeat {
+    0% {
+        transform: scale(1.1);
+    }
+
+    50% {
+        transform: scale(0.8);
+    }
+
+    100% {
+        transform: scale(1.1);
+    }
+}
+
+@keyframes --kf-ring {
+    0% {
+        transform: rotate(-15deg);
+    }
+
+    2% {
+        transform: rotate(15deg);
+    }
+
+    4% {
+        transform: rotate(-18deg);
+    }
+
+    6% {
+        transform: rotate(18deg);
+    }
+
+    8% {
+        transform: rotate(-22deg);
+    }
+
+    10% {
+        transform: rotate(22deg);
+    }
+
+    12% {
+        transform: rotate(-18deg);
+    }
+
+    14% {
+        transform: rotate(18deg);
+    }
+
+    16% {
+        transform: rotate(-12deg);
+    }
+
+    18% {
+        transform: rotate(12deg);
+    }
+
+    20% {
+        transform: rotate(0deg);
+    }
+}

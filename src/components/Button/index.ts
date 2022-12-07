@@ -1,1 +1,1 @@
-export {default as PushButton, BUTTON_VARIANTS, BUTTON_SIZE, BUTTON_ROUNDED, BUTTON_ANIMATION} from "./Button"
+export {default as Button, BUTTON_VARIANTS, BUTTON_SIZE, BUTTON_ROUNDED, BUTTON_ANIMATION, BUTTON_EXTRA} from "./Button"
