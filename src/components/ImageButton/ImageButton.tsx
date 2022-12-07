@@ -56,7 +56,17 @@ const ImageButton: FC<IImageButton> = ({
 
     return (
         <button className={classes} onClick={handleClick} {...props}>
-
+            {icon && (
+                <Icon name={icon}/>
+            )}
+            {image && (
+                <Image src={image}/>
+            )}
+            {caption && (
+                <Caption caption={caption} />
+            )}
         </button>
     )
 }
+
+export default ImageButton

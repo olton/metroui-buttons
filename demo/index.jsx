@@ -1,6 +1,16 @@
 import React from "react";
 import { createRoot } from 'react-dom/client';
-import {Button, CommandButton, BUTTON_SIZE, BUTTON_VARIANTS, BUTTON_ROUNDED, BUTTON_ANIMATION, BUTTON_EXTRA} from "../src/index"
+import {
+    Button,
+    CommandButton,
+    BUTTON_SIZE,
+    BUTTON_VARIANTS,
+    BUTTON_ROUNDED,
+    BUTTON_ANIMATION,
+    BUTTON_EXTRA,
+    ImageButton
+} from "../src/index"
+
 import "./index.less"
 
 const App = () => {
@@ -146,6 +156,43 @@ const App = () => {
                 <CommandButton outline variant={BUTTON_VARIANTS.PRIMARY} icon="mif-share" title="Yes, share and connect" subtitle="Use this option for home or work"/>
                 <CommandButton outline variant={BUTTON_VARIANTS.SECONDARY} icon="mif-share" title="Yes, share and connect" subtitle="Use this option for home or work"/>
                 <CommandButton outline variant={BUTTON_VARIANTS.DANGER} icon="mif-share" title="Yes, share and connect" subtitle="Use this option for home or work"/>
+            </div>
+            <br/>
+            <br/>
+            <div className="button-container">
+                <h2>Image Button</h2>
+            </div>
+            <div className="button-container">
+                <ImageButton icon="mif-share" caption="Share It" />
+                <ImageButton iconRight icon="mif-share" caption="Share It" />
+            </div>
+            <div className="button-container">
+                <ImageButton variant={BUTTON_VARIANTS.DEFAULT} icon="mif-share" caption="Share It" />
+                <ImageButton variant={BUTTON_VARIANTS.PRIMARY} icon="mif-share" caption="Share It" />
+                <ImageButton variant={BUTTON_VARIANTS.SECONDARY} icon="mif-share" caption="Share It" />
+                <ImageButton variant={BUTTON_VARIANTS.SUCCESS} icon="mif-share" caption="Share It" />
+                <ImageButton variant={BUTTON_VARIANTS.WARNING} icon="mif-share" caption="Share It" />
+                <ImageButton variant={BUTTON_VARIANTS.DANGER} icon="mif-share" caption="Share It" />
+            </div>
+            <div className="button-container">
+                <ImageButton shadow variant={BUTTON_VARIANTS.DEFAULT} icon="mif-share" caption="Share It" />
+                <ImageButton shadow variant={BUTTON_VARIANTS.PRIMARY} icon="mif-share" caption="Share It" />
+                <ImageButton shadow variant={BUTTON_VARIANTS.SECONDARY} icon="mif-share" caption="Share It" />
+                <ImageButton shadow variant={BUTTON_VARIANTS.SUCCESS} icon="mif-share" caption="Share It" />
+                <ImageButton shadow variant={BUTTON_VARIANTS.WARNING} icon="mif-share" caption="Share It" />
+                <ImageButton shadow variant={BUTTON_VARIANTS.DANGER} icon="mif-share" caption="Share It" />
+            </div>
+            <div className="button-container">
+                <ImageButton outline variant={BUTTON_VARIANTS.DEFAULT} icon="mif-share" caption="Share It" />
+                <ImageButton outline variant={BUTTON_VARIANTS.PRIMARY} icon="mif-share" caption="Share It" />
+                <ImageButton outline variant={BUTTON_VARIANTS.SECONDARY} icon="mif-share" caption="Share It" />
+                <ImageButton outline variant={BUTTON_VARIANTS.SUCCESS} icon="mif-share" caption="Share It" />
+                <ImageButton outline variant={BUTTON_VARIANTS.WARNING} icon="mif-share" caption="Share It" />
+                <ImageButton outline variant={BUTTON_VARIANTS.DANGER} icon="mif-share" caption="Share It" />
+            </div>
+            <div className="button-container">
+                <ImageButton animate={BUTTON_ANIMATION.RING} icon="mif-bell" caption="Ring Setup" />
+                <ImageButton animate={BUTTON_ANIMATION.ROTATE} iconRight icon="mif-cog" caption="Options" />
             </div>
         </>
     )
