@@ -18,6 +18,7 @@ const App = () => {
         <>
             <div className="button-container" style={{flexFlow: "column"}}>
                 <h1>Metro UI/Button Set</h1>
+                <h2>For React</h2>
                 <p>Copyright 2022 by <a href="https://Korzh.com">Korzh.com</a></p>
             </div>
             <br/>
