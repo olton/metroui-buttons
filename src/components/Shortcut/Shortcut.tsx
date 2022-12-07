@@ -47,6 +47,7 @@ const Shortcut: FC<IShortcut> = ({
         rounded === BUTTON_ROUNDED.NONE ? '' : 'rounded',
         shadow ? 'shadowed' : "",
         outline ? 'outline-button' : "",
+        !caption ? 'no-caption' : "",
     )
 
     const handleClick: MouseEventHandler<HTMLButtonElement> = (e) => {

@@ -235,6 +235,7 @@ const App = () => {
                 <Shortcut rounded animate={BUTTON_ANIMATION.RING} variant={BUTTON_VARIANTS.DEFAULT} icon="mif-bell" caption="Ring" />
                 <Shortcut rounded animate={BUTTON_ANIMATION.ROTATE} variant={BUTTON_VARIANTS.DEFAULT} icon="mif-cog" caption="options" />
                 <Shortcut badge={10} variant={BUTTON_VARIANTS.SUCCESS} icon="mif-share" caption="Share It" />
+                <Shortcut badge={10} variant={BUTTON_VARIANTS.PRIMARY} icon="mif-share" />
             </div>
             <br/>
             <br/>

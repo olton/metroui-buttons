@@ -108,7 +108,7 @@
 }
 
 .push-button, .outline-button {
-    .icon {
+    .button-icon {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -119,32 +119,32 @@
         }
     }
     &.mini-button {
-        .icon {width: 14px; height: 14px;}
-        .icon + * { margin-left: 2px; }
-        * + .icon { margin-left: 2px; }
+        .button-icon {width: 14px; height: 14px;}
+        .button-icon + * { margin-left: 2px; }
+        * + .button-icon { margin-left: 2px; }
     }
     &.small-button {
-        .icon {width: 16px; height: 16px}
-        .icon + * { margin-left: 4px; }
-        * + .icon { margin-left: 4px; }
+        .button-icon {width: 16px; height: 16px}
+        .button-icon + * { margin-left: 4px; }
+        * + .button-icon { margin-left: 4px; }
     }
     &.medium-button {
-        .icon {width: 22px; height: 22px}
-        .icon + * { margin-left: 6px; }
-        * + .icon { margin-left: 6px; }
+        .button-icon {width: 22px; height: 22px}
+        .button-icon + * { margin-left: 6px; }
+        * + .button-icon { margin-left: 6px; }
     }
     &.large-button {
-        .icon {width: 30px; height: 30px}
-        .icon + * { margin-left: 12px;}
-        * + .icon { margin-left: 12px;}
+        .button-icon {width: 30px; height: 30px}
+        .button-icon + * { margin-left: 12px;}
+        * + .button-icon { margin-left: 12px;}
     }
 }
 
 .push-button, .outline-button {
-    &.left-rounded .icon {
+    &.left-rounded .button-icon {
         order: 0;
     }
-    &.right-rounded .icon {
+    &.right-rounded .button-icon {
         order: 2;
     }
 
@@ -163,7 +163,7 @@
         &.right-rounded {
             border-top-right-radius: 12px;
             border-bottom-right-radius: 12px;
-            .icon { margin-left: 4px; }
+            .button-icon { margin-left: 4px; }
         }
         &.left-rounded {
             border-top-left-radius: 12px;
@@ -174,7 +174,7 @@
         &.right-rounded {
             border-top-right-radius: 20px;
             border-bottom-right-radius: 20px;
-            .icon { margin-left: 6px; }
+            .button-icon { margin-left: 6px; }
 
         }
         &.left-rounded {
@@ -186,7 +186,7 @@
         &.right-rounded {
             border-top-right-radius: 28px;
             border-bottom-right-radius: 28px;
-            .icon { margin-left: 12px; }
+            .button-icon { margin-left: 12px; }
         }
         &.left-rounded {
             border-top-left-radius: 28px;
@@ -195,11 +195,11 @@
     }
 
     &.icon-right {
-        .icon {order: 2!important;}
-        &.mini-button {.icon { margin-left: 2px; }}
-        &.small-button {.icon { margin-left: 4px; }}
-        &.medium-button {.icon { margin-left: 6px; }}
-        &.large-button {.icon { margin-left: 12px; }}
+        .button-icon {order: 2!important;}
+        &.mini-button {.button-icon { margin-left: 2px; }}
+        &.small-button {.button-icon { margin-left: 4px; }}
+        &.medium-button {.button-icon { margin-left: 6px; }}
+        &.large-button {.button-icon { margin-left: 12px; }}
     }
 }
 
