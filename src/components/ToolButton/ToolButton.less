@@ -1,0 +1,54 @@
+.tool-button {
+    height: 32px;
+    min-width: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--defaultColor);
+    color: var(--textColor);
+    opacity: .8;
+    user-select: none;
+    border: 1px solid transparent;
+    transition: all .15s ease-in-out;
+    padding: 0 4px;
+    cursor: pointer;
+    outline: none;
+    margin: 0 2px;
+    position: relative;
+    font-size: 14px;
+
+    &:hover {
+        opacity: 1;
+    }
+
+    &:active {
+        opacity: .9;
+    }
+
+    .caption, .icon {
+        margin: 0 4px;
+    }
+}
+
+.tool-button {
+    &.outline-button {
+        &:hover {
+            background-color: var(--defaultColor)!important;
+            color: var(--textColor)!important;
+        }
+    }
+}
+
+.tool-button.shadowed:not(.disabled) {
+    box-shadow: 0 1px 3px var(--shadowColor);
+    &:active {
+        box-shadow: none;
+    }
+}
+
+.tool-button {
+    &.disabled {
+        pointer-events: none;
+        color: var(--textInvertColor) !important;
+    }
+}

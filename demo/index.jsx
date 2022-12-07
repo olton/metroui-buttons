@@ -9,7 +9,8 @@ import {
     BUTTON_ANIMATION,
     BUTTON_EXTRA,
     ImageButton,
-    Shortcut
+    Shortcut,
+    Toolbar, ToolButton
 } from "../src/index"
 
 import "./index.less"
@@ -233,6 +234,42 @@ const App = () => {
                 <Shortcut animate={BUTTON_ANIMATION.ROTATE} variant={BUTTON_VARIANTS.DEFAULT} icon="mif-cog" caption="options" />
                 <Shortcut rounded animate={BUTTON_ANIMATION.RING} variant={BUTTON_VARIANTS.DEFAULT} icon="mif-bell" caption="Ring" />
                 <Shortcut rounded animate={BUTTON_ANIMATION.ROTATE} variant={BUTTON_VARIANTS.DEFAULT} icon="mif-cog" caption="options" />
+                <Shortcut badge={10} variant={BUTTON_VARIANTS.SUCCESS} icon="mif-share" caption="Share It" />
+            </div>
+            <br/>
+            <br/>
+            <div className="button-container">
+                <h2>Toolbar</h2>
+            </div>
+            <div className="button-container">
+                <Toolbar>
+                    <ToolButton icon="mif-floppy-disk"/>
+                    <ToolButton icon="mif-checkmark"/>
+                    <ToolButton icon="mif-printer"/>
+                    <ToolButton caption="Open File"/>
+                    <ToolButton icon="mif-folder-open" caption="Open File"/>
+                    <ToolButton icon="mif-pencil" caption="Edit File" disabled/>
+                </Toolbar>
+            </div>
+            <div className="button-container">
+                <Toolbar>
+                    <ToolButton outline icon="mif-floppy-disk"/>
+                    <ToolButton outline icon="mif-checkmark"/>
+                    <ToolButton outline icon="mif-printer"/>
+                    <ToolButton outline caption="Open File"/>
+                    <ToolButton outline icon="mif-folder-open" caption="Open File"/>
+                    <ToolButton icon="mif-pencil" caption="Edit File" disabled/>
+                </Toolbar>
+            </div>
+            <div className="button-container">
+                <Toolbar>
+                    <ToolButton shadow icon="mif-floppy-disk"/>
+                    <ToolButton shadow icon="mif-checkmark"/>
+                    <ToolButton shadow icon="mif-printer"/>
+                    <ToolButton shadow caption="Open File"/>
+                    <ToolButton shadow icon="mif-folder-open" caption="Open File"/>
+                    <ToolButton shadow icon="mif-pencil" caption="Edit File" disabled/>
+                </Toolbar>
             </div>
         </>
     )

@@ -1,0 +1,44 @@
+.toolbar {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 0 0 0 10px;
+    flex-flow: row nowrap;
+    margin-left: 4px;
+    height: 32px;
+
+    &.no-before {
+        &::before {
+            display: none;
+        }
+    }
+
+    &::before {
+        position: absolute;
+        content: "";
+        width: 4px;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background-color: var(--toolbarBeforeColor);
+        cursor: move;
+    }
+
+    &.vertical {
+        flex-flow: column nowrap;
+        padding: .5725rem 0 0 0;
+        width: 32px;
+        margin-left: 0;
+        margin-top: 4px;
+
+        &::before {
+            width: 32px;
+            height: .325rem;
+        }
+
+        .tool-button {
+            margin: 2px 0;
+        }
+    }
+}
