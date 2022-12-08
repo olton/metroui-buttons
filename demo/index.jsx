@@ -10,7 +10,8 @@ import {
     BUTTON_EXTRA,
     ImageButton,
     Shortcut,
-    Toolbar, ToolButton
+    Toolbar, ToolButton,
+    InfoButton,
 } from "../src/index"
 
 import "./index.less"
@@ -271,6 +272,34 @@ const App = () => {
                     <ToolButton shadow icon="mif-folder-open" caption="Open File"/>
                     <ToolButton shadow icon="mif-pencil" caption="Edit File" disabled/>
                 </Toolbar>
+            </div>
+            <br/>
+            <br/>
+            <div className="button-container">
+                <h2>Info Button</h2>
+            </div>
+            <div className="button-container">
+                <InfoButton buttonTitle="Stars" linkTitle={7.123}/>
+                <InfoButton icon="mif-star-full" buttonTitle="Stars" linkTitle={7.123}/>
+            </div>
+            <div className="button-container">
+                <InfoButton variant={BUTTON_VARIANTS.PRIMARY} icon="mif-star-full" buttonTitle="Stars" linkTitle={7.123}/>
+                <InfoButton variant={BUTTON_VARIANTS.SECONDARY} icon="mif-star-full" buttonTitle="Stars" linkTitle={7.123}/>
+                <InfoButton variant={BUTTON_VARIANTS.DANGER} icon="mif-star-full" buttonTitle="Stars" linkTitle={7.123}/>
+                <InfoButton variant={BUTTON_VARIANTS.WARNING} icon="mif-star-full" buttonTitle="Stars" linkTitle={7.123}/>
+                <InfoButton variant={BUTTON_VARIANTS.SUCCESS} icon="mif-star-full" buttonTitle="Stars" linkTitle={7.123}/>
+            </div>
+            <div className="button-container">
+                <InfoButton shadow variant={BUTTON_VARIANTS.PRIMARY} icon="mif-star-full" buttonTitle="Stars" linkTitle={7.123}/>
+                <InfoButton shadow variant={BUTTON_VARIANTS.SECONDARY} icon="mif-star-full" buttonTitle="Stars" linkTitle={7.123}/>
+                <InfoButton shadow variant={BUTTON_VARIANTS.DANGER} icon="mif-star-full" buttonTitle="Stars" linkTitle={7.123}/>
+                <InfoButton shadow variant={BUTTON_VARIANTS.WARNING} icon="mif-star-full" buttonTitle="Stars" linkTitle={7.123}/>
+                <InfoButton shadow variant={BUTTON_VARIANTS.SUCCESS} icon="mif-star-full" buttonTitle="Stars" linkTitle={7.123}/>
+            </div>
+            <div className="button-container">
+                <InfoButton rounded={BUTTON_ROUNDED.BOTH} icon="mif-star-full" buttonTitle="Stars" linkTitle={7.123}/>
+                <InfoButton rounded={BUTTON_ROUNDED.LEFT} icon="mif-star-full" buttonTitle="Stars" linkTitle={7.123}/>
+                <InfoButton rounded={BUTTON_ROUNDED.RIGHT} icon="mif-star-full" buttonTitle="Stars" linkTitle={7.123}/>
             </div>
         </>
     )
