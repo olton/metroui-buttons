@@ -309,10 +309,10 @@ const App = () => {
             </div>
             <div className="button-container">
                 <Breadcrumbs>
-                    <Crumb caption="Home"/>
-                    <Crumb caption="Products"/>
-                    <Crumb caption="Download"/>
-                    <Crumb caption="Windows 11"/>
+                    <Crumb caption="Home" target="#"/>
+                    <Crumb caption="Products" target="#"/>
+                    <Crumb caption="Download" target="#"/>
+                    <Crumb caption="Windows 11" target="#"/>
                 </Breadcrumbs>
             </div>
         </>
