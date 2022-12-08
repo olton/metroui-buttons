@@ -1,7 +1,7 @@
 {
   "name": "@metroui/buttons",
   "description": "Metro UI Buttons for React (Vite, TypeScript)",
-  "version": "0.0.9",
+  "version": "0.1.0",
   "license": "MIT",
   "author": "Serhii Pimenov <serhii@pimenov.com.ua> (https://pimenov.com.ua)",
   "keywords": [
