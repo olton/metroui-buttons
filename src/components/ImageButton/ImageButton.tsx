@@ -20,6 +20,7 @@ type IImageButton = ButtonHTMLAttributes<HTMLButtonElement> & {
     iconRight?: boolean,
     shadow?: boolean,
     outline?: boolean,
+    className?: string,
     onClick?: MouseEventHandler<HTMLButtonElement>
 }
 
@@ -36,6 +37,7 @@ const ImageButton: FC<IImageButton> = ({
     shadow = false,
     outline = false,
     onClick,
+    className,
     ...props
 }) => {
     const classes = classNames(
@@ -47,6 +49,7 @@ const ImageButton: FC<IImageButton> = ({
         iconRight ? 'icon-right' : "",
         shadow ? 'shadowed' : "",
         outline ? 'outline-button' : "",
+        className,
     )
 
     const handleClick: MouseEventHandler<HTMLButtonElement> = (e) => {

@@ -16,6 +16,7 @@ type ICommandButton = ButtonHTMLAttributes<HTMLButtonElement> & {
     image?: string,
     title?: string,
     subtitle?: string,
+    className?: string,
     animate?: BUTTON_ANIMATION,
     iconRight?: boolean,
     shadow?: boolean,
@@ -36,6 +37,7 @@ const CommandButton: FC<ICommandButton> = ({
     shadow = false,
     outline = false,
     onClick,
+    className,
     ...props
 }) => {
     const classes = classNames(
@@ -46,6 +48,7 @@ const CommandButton: FC<ICommandButton> = ({
         iconRight ? 'icon-right' : "",
         shadow ? 'shadowed' : "",
         outline ? 'outline-button' : "",
+        className,
     )
     const handleClick: MouseEventHandler<HTMLButtonElement> = (e) => {
         if (disabled) return

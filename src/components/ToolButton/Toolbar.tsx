@@ -1,12 +1,18 @@
 import React, {FC} from "react";
 import "./Toolbar.less"
+import classNames from "classnames";
 interface IToolbarProps {
-    children?: React.ReactNode
+    children?: React.ReactNode,
+    className?: string,
 }
 
-const Toolbar: FC<IToolbarProps> = ({children}) => {
+const Toolbar: FC<IToolbarProps> = ({className, children}) => {
+    const classes = classNames(
+        "toolbar",
+        className,
+    )
     return (
-        <div className="toolbar">
+        <div className={classes}>
             {children}
         </div>
     )

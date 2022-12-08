@@ -14,6 +14,7 @@ interface IInfoButton {
     target?: string,
     icon?: string,
     image?: string,
+    className?: string,
     onClick: MouseEventHandler<HTMLButtonElement>
 }
 
@@ -28,6 +29,7 @@ const InfoButton: FC<IInfoButton> = ({
     icon = '',
     image = '',
     onClick,
+    className,
     ...props
 }) => {
     const classes = classNames(
@@ -35,6 +37,7 @@ const InfoButton: FC<IInfoButton> = ({
         `${variant}-button`,
         rounded === BUTTON_ROUNDED.NONE ? '' : rounded,
         shadow ? 'shadowed' : "",
+        className,
     )
 
     const handleClick: MouseEventHandler<HTMLButtonElement> = (e) => {

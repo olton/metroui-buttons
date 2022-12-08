@@ -16,6 +16,7 @@ type IPushButton = ButtonHTMLAttributes<HTMLButtonElement> & {
     icon?: string,
     image?: string,
     caption?: string,
+    className?: string,
     animate?: BUTTON_ANIMATION,
     rounded?: BUTTON_ROUNDED,
     iconRight?: boolean,
@@ -42,6 +43,7 @@ const Button: FC<IPushButton> = ({
     extra = BUTTON_EXTRA.NONE,
     flat = false,
     onClick,
+    className,
     ...props
 }) => {
     const classes = classNames(
@@ -55,7 +57,8 @@ const Button: FC<IPushButton> = ({
         shadow ? 'shadowed' : "",
         outline ? 'outline-button' : "",
         extra === BUTTON_EXTRA.NONE ? '' : extra,
-        flat ? 'flat-button' : ''
+        flat ? 'flat-button' : '',
+        className
     )
 
     const handleClick: MouseEventHandler<HTMLButtonElement> = (e) => {

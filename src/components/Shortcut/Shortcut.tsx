@@ -21,6 +21,7 @@ type IShortcut = ButtonHTMLAttributes<HTMLButtonElement> & {
     shadow?: boolean,
     outline?: boolean,
     badge?: number,
+    className?: string,
     onClick?: MouseEventHandler<HTMLButtonElement>
 }
 
@@ -37,6 +38,7 @@ const Shortcut: FC<IShortcut> = ({
    outline = false,
    badge = null,
    onClick,
+    className,
    ...props
 }) => {
     const classes = classNames(
@@ -48,6 +50,7 @@ const Shortcut: FC<IShortcut> = ({
         shadow ? 'shadowed' : "",
         outline ? 'outline-button' : "",
         !caption ? 'no-caption' : "",
+        className,
     )
 
     const handleClick: MouseEventHandler<HTMLButtonElement> = (e) => {
