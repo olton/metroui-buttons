@@ -12,6 +12,7 @@ import {
     Shortcut,
     Toolbar, ToolButton,
     InfoButton,
+    Breadcrumbs, Crumb,
 } from "../src/index"
 
 import "./index.less"
@@ -300,6 +301,19 @@ const App = () => {
                 <InfoButton rounded={BUTTON_ROUNDED.BOTH} icon="mif-star-full" buttonTitle="Stars" linkTitle={7.123}/>
                 <InfoButton rounded={BUTTON_ROUNDED.LEFT} icon="mif-star-full" buttonTitle="Stars" linkTitle={7.123}/>
                 <InfoButton rounded={BUTTON_ROUNDED.RIGHT} icon="mif-star-full" buttonTitle="Stars" linkTitle={7.123}/>
+            </div>
+            <br/>
+            <br/>
+            <div className="button-container">
+                <h2>Breadcrumbs</h2>
+            </div>
+            <div className="button-container">
+                <Breadcrumbs>
+                    <Crumb caption="Home"/>
+                    <Crumb caption="Products"/>
+                    <Crumb caption="Download"/>
+                    <Crumb caption="Windows 11"/>
+                </Breadcrumbs>
             </div>
         </>
     )
