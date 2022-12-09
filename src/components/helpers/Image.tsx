@@ -10,7 +10,7 @@ export const Image: FC<IImageProps> = ({src, className}) => {
     const classes = classNames(className)
 
     return (
-        <span className="icon">
+        <span className="button-icon">
             <img className={classes} src={src} />
         </span>
     )
